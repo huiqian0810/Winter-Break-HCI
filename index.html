@@ -7,32 +7,48 @@
     <title>我的个人主页</title>
     <link rel="stylesheet" href="style.css">
  </head>
+ <body>
+    <header>
+            <div class="logo">HuiQian.Design</div>
+            <nav>
+                <ul>
+                    <li><a href="#profile">关于我</a></li>
+                    <li><a href="#projects">作品集</a></li>
+                    <li><button id="theme-btn">🌙</button></li>
+                </ul>
+            </nav>
+    </header>
+
+    <main>
+        <section id="profile">
+            <div class="card"> 
+                <img src="./assets/avatar.jpg" alt="我的头像" width="200">
+                <h1>huiqian0810</h1>
+                <h1>JSNU 智能交互设计</h1>
+                <p>正在进化的全栈设计师。目标是打造AI驱动的 Next-Gen 交互体验。</p>
+            </div>
+        </section>
+        <section id="projects">
+            <h2>我的学习里程碑</h2>
+            <div class="project-grid">
+                <div class="project-item">
+                    <h3>Day1-3</h3>
+                    <p>HTML & CSS 基础架构</p>
+                </div>
+                <div class="project-item">
+                    <h3>Day5</h3>
+                    <p>JS 交互逻辑（深色模式）</p>
+                </div>
+                <div class="project-item">
+                    <h3>Day 40(Target)</h3>
+                    <p>全栈交互系统</p>
+                </div>
+            </div>
+        </setion>
+    </main>
+    <footer>
+        <p>&copy; 2026 Huiqian. Built with Love and Code.</p>
+    </footer>
+    <script src="script.js"></script>
+ </body>    
  </html>
- <boby>
-    <div class="card">
-        <img src="./assets/avatar.jpg" alt="我的头像" width="200">
-
-        <h1>huiqian0810</h1>
-        <h1>JSNU 智能交互设计 ｜ 2029届毕业交互工程师</h1>
-
-        <p>
-            你好！我是一名正在进化的全栈设计师。
-            目前正在利用寒假突击<b>Web 前端</b> 与 <b>日语</b>
-            我的目标是打造AI驱动的Next——Gen交互体验
-        </p>
-        <h4>当前技能栈</h4>
-        <ul>
-            <li>HTML5 结构化思维</li>
-            <li>Git 版本控制</li>
-            <li>日语N2学习中</li
-            <li>RTX5060本地算力</li>
-        </ul>
-
-        <p>
-            查看我的代码库
-            <a href="https://github.com/huiqian0810/Winter-Break-HCI"target="_blank">点击跳转Github</a>
-        </p>
-        <button id="theme-btn">切换界面主题</button>
-    </div>
-    <script src="script.js"></script> 
- </boby>    

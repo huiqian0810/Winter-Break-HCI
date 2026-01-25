@@ -1,77 +1,143 @@
+/* --- 全局重置 --- */
 body {
-    font-family: 'Helvetica Neue', sans-serif;
-    background-color: #08efad;
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-} 
-.card{
-    background-color:white;
-    width: 360px;
-    padding: 30px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0,1);
-    text-align: center;
-}
-img{
-    border-radius: 50%;
-    border:5px solid #fff;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
-h1{
-    color:#333;
-    margin-bottom:5px;
-}
-h3{
-    color:#777;
-    font-weight:normal;
-    font-size:14px;
-}
-ul{
-    list-style:none;
-    padding:0;
-}
-li{
-    background:#f8f9fa;
-    margin:8px 0;
-    padding:10px;
-    border-radius:8px;
-    color:#555;
-}
-button{
-    background-color: #007AFF;
-    color:white;
-    padding:12px 30px;
-    border-radius:25px;
-    font-size: 16px;
-    transition:0.3s;
-    margin-top: 20px;
-}
-button:hover{
-    background-color:#0056B3;
-    transform:scale(1.05);
-}
-body.dark-mode {
-    background-color:#1a1a1a;
-    color:#f0f0f0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0; /* 去掉浏览器默认边距，让导航栏贴边 */
+    padding: 0;
+    transition: 0.3s;
 }
 
-body.dark-mode .card{
-    background-color:#2d2d2d;
-    color:#f0f0f0;
-    box-shadow:0 10px 25px rgba(0,0,0.5);
+/* --- 1. 导航栏样式 (重点学习 Flexbox 两端对齐) --- */
+header {
+    background-color: white;
+    padding: 15px 50px;
+    display: flex; /* 开启弹性布局 */
+    justify-content: space-between; /* 关键：左边一个，右边一个，中间撑开 */
+    align-items: center; /* 垂直居中 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky; /* 粘性定位：滚动时它会吸在顶部 */
+    top: 0;
+    z-index: 100; /* 保证它永远压在内容上面 */
 }
-body.dark-mode li{
-    background-color:#3c3c3c;
-    color:#ccc;
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    color: #6ddda7;
 }
-body.dark-mode h1{
-    color:white;
+
+header ul {
+    display: flex; /* 让导航菜单横着排 */
+    list-style: none;
+    gap: 20px; /* 每个菜单之间隔开 20px */
+    padding: 0;
+    margin: 0;
+    align-items: center;
 }
-body.dark-mode p,
-body.dark-mode h3{
-    color:#dddddd;
+
+header a {
+    text-decoration: none; /* 去掉下划线 */
+    color: #555;
+    font-weight: 500;
 }
-body.dark-mode a {
-    color:#4da3ff;
+
+header a:hover {
+    color: #007AFF;
+}
+
+/* 小按钮样式微调 */
+#theme-btn {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    font-size: 18px;
+    border-radius: 50%;
+    margin: 0; /* 去掉之前的 margin */
+}
+
+/* --- 2. 主内容区 --- */
+main {
+    padding: 40px 20px;
+    max-width: 800px; /* 限制最大宽度，防止在大屏幕上太散 */
+    margin: 0 auto;   /* 居中显示 */
+}
+
+/* --- 复用之前的 Card 样式 --- */
+.card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+    margin-bottom: 50px; /* 把下面的作品集顶开 */
+}
+
+img {
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* --- 3. 作品集网格 (Grid Layout) --- */
+#projects h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.project-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; /* 如果屏幕太小，自动换行 */
+}
+
+.project-item {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 200px; /* 每个项目卡的宽度 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.project-item:hover {
+    transform: translateY(-5px); /* 鼠标放上去，稍微上浮 */
+}
+
+/* --- 4. 页脚 --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-size: 12px;
+}
+
+/* --- 5. 深色模式适配 (这一块逻辑最重要) --- */
+body.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.dark-mode header,
+body.dark-mode .card,
+body.dark-mode .project-item {
+    background-color: #1e1e1e;
+    color: #fff;
+    box-shadow: none; /* 深色模式下阴影不好看，去掉 */
+}
+
+body.dark-mode header a {
+    color: #ccc;
+}
+
+body.dark-mode .logo {
+    color: #4da3ff;
+}
+
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3 {
+    color: #fff;
 }

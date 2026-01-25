@@ -3,8 +3,8 @@ const body=document.body;
 button.addEventListener('click',function(){
     body.classList.toggle('dark-mode');
     if (body.classList.contains('dark-mode')){
-        button.innerText='开灯✨';
+        button.innerText='☀️';
     } else{
-        button.innerText='关灯🌙';
+        button.innerText='🌙';
     }
-});
+})
