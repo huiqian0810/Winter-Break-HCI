@@ -62,7 +62,53 @@ main {
     max-width: 800px; /* 限制最大宽度，防止在大屏幕上太散 */
     margin: 0 auto;   /* 居中显示 */
 }
-
+.project-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap:30px;
+    padding: 20px;
+}
+.project-card{
+    background:white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover{
+    transform: translateY(-10px);/* 上浮效果 */
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);/* 加深阴影，增加立体感 */
+}
+.card-image img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}   
+.card-content{
+    padding: 25px;
+    text-align:left;
+}
+.card-content h3{
+    margin-top: 0 ;
+    margin-bottom: 10px;
+    color:#333;
+}
+.card-content p{
+    color:#666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.btn-link{
+    display: inline-block;
+    text-decoration: none;
+    color:#82fcb5;
+    font-weight: bold;
+    font-size: 14px;
+}
+.btn-link:hover{
+    text-decoration: underline;
+}
 /* --- 复用之前的 Card 样式 --- */
 .card {
     background-color: white;
@@ -73,38 +119,12 @@ main {
     margin-bottom: 50px; /* 把下面的作品集顶开 */
 }
 
-img {
+.card img {
     border-radius: 50%;
     border: 5px solid white;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* --- 3. 作品集网格 (Grid Layout) --- */
-#projects h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.project-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap; /* 如果屏幕太小，自动换行 */
-}
-
-.project-item {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    width: 200px; /* 每个项目卡的宽度 */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-    text-align: center;
-    transition: 0.3s;
-}
-
-.project-item:hover {
-    transform: translateY(-5px); /* 鼠标放上去，稍微上浮 */
-}
 
 /* --- 4. 页脚 --- */
 footer {
@@ -119,7 +139,19 @@ body.dark-mode {
     background-color: #121212;
     color: #f0f0f0;
 }
-
+body.dark-mode .project-card {
+        background-color: #1e1e1e;
+        box-shadow: none;
+    }
+body.dark-mode .card-content h3 {
+        color: #fff;
+    }
+body.dark-mode .card-content p {
+        color: #aaa;
+    }
+body.dark-mode .btn-link {
+        color: #4da3ff;
+    }
 body.dark-mode header,
 body.dark-mode .card,
 body.dark-mode .project-item {
