@@ -1,6 +1,8 @@
-/* --- 全局重置 --- */
+html{
+    scroll-behavior:smooth;
+}
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
     background-color: #f0f2f5;
     color: #333;
     margin: 0; /* 去掉浏览器默认边距，让导航栏贴边 */
@@ -172,4 +174,27 @@ body.dark-mode h1,
 body.dark-mode h2, 
 body.dark-mode h3 {
     color: #fff;
+}
+@media (max-width:768px){ 
+    header{
+        padding:15px 20px;
+    }
+    .logo{
+        font-size: 18px;
+    }
+    header ul{
+        gap:10px;
+    }
+    header a{
+        font-size:14px;
+    }
+    main{
+        padding:20px 15px;
+    }
+    .card{
+        padding:20px;
+    }
+    .card img{
+        width: 150px;
+    }
 }
