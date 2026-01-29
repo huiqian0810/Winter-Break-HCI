@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        body{
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            height:100vh;
+            background-color:#000000;
+            color:#ffffff;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+            gap:50px;
+        }
+        .card{
+            padding:40px;
+            background-color:#1e1e1e;
+            border-radius: 20px;
+            border:1px solid white;
+
+        }
+        button{
+            padding:10px 20px;
+            font-size:16px;
+            border:none;
+            border-radius:5px;
+            background-color:#ffffff;
+            color:#000000;
+            cursor:pointer;
+            transition: 0.3s;
+        }
+        button:hover{
+            background-color:#2fd89da3;
+            transform: scale(1.1);
+        }
+        .grid-container{
+            display:grid;
+            gap:20px;
+            grid-template-columns: repeat(2, 1fr);
+            width: 300px;
+        }
+        .item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:#69caa6a3;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+            height: 80px;
+        }    
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🎁</h1>
+        <h2>System Upgrade</h2>
+        <p>正在重构大脑...</p>
+        <button>Notify Me</button>
+    </div>
+    <div class="grid-container">
+        <div class="item">HTML</div>
+        <div class="item">CSS</div>
+        <div class="item">Design</div>
+        <div class="item">JavaScript</div>
+    </div>
+</body>
+</html>
