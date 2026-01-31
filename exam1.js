@@ -10,14 +10,38 @@ console.log(button);
 
 //3.给按钮装一个耳朵。监听‘click’（点击）事件
 //addEventlistener意思是：给这个按钮装一个耳朵，让它能听到某些事件（添加事件监听器）
-button.addEventListener("click", function() {
+//button.addEventListener("click", function() {
     //动作一：修改案里面的文字
     //innerText意思是：标签里面的文字内容
-    button.innerText = "已订阅";
+    //  button.innerText = "已订阅";
     //动作二：修改按钮的背景颜色
     //style意思是：标签的样式，
     //backgroundColour就是CSS中的background-color（背景颜色）
-    button.style.backgroundColor = "#4ade80";
+    //button.style.backgroundColor = "#4ade80";
     //动作三：修改按钮的文字颜色(怕绿色背景看不清黑色文字)
-    button.style.color = "#000000";
+  //  button.style.color = "#000000";
+//});
+//新增订阅：做一个标记（Flag）
+//let意思是变量，因为这个状态会变所以不用const
+//flase意思是假，代表没有订阅
+let isSubscribed = false;
+
+//给按钮装一个耳朵，监听点击事件
+button.addEventListener("click", function() {
+    //判断当前的状态
+    //符号==意思是：半段是否相等
+    //这里的逻辑是：如果isSubscribed等于假
+    if (isSubscribed === false) {
+        //如果没有订阅，就执行订阅的动作
+        button.innerText = "已订阅";
+        button.style.backgroundColor = "#4ade80";
+        //关键一步：把isSubscribed改成真，代表已经订阅了
+        isSubscribed = true;
+    } else {
+        //否则就把button改回去
+        button.innerText = "Notify Me";
+        button.style.backgroundColor = "white";
+        //把isSubscribed改成假，代表没有订阅
+        isSubscribed = false;
+    }
 });
